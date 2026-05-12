@@ -30,7 +30,7 @@ Sustav čeka pritisak tipke. Nakon pritiska izvršava aktivnu fazu (LED blinkanj
 
 ## Wokwi link
 
-(ovdje zalijepi link)
+https://wokwi.com/projects/463285677123789825
 
 ## Zaključak
 
