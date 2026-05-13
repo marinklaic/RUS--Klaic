@@ -35,8 +35,8 @@ void setup() {
   }
 
   Serial.println("Zavrseno → idem u sleep");
-
-  esp_sleep_enable_ext0_wakeup(GPIO_NUM_18, 0);
+  
+  esp_sleep_enable_ext0_wakeup(GPIO_NUM_18, 0); //probudi se kad se nešto dogodi na pinu 18
 
   delay(500);
   esp_deep_sleep_start();
