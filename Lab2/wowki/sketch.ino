@@ -1,30 +1,32 @@
 #include "esp_sleep.h"
 
-#define BUTTON_PIN 18
-#define LED_PIN 2
+#define BUTTON_PIN 18 //definiranje pina za tipkalo 
+#define LED_PIN 2 //definiranje pina za led 
 
-RTC_DATA_ATTR int wakeCount = 0;
+
+RTC_DATA_ATTR int wakeCount = 0; //definiranje rtc memorije
 
 void setup() {
-  Serial.begin(115200);
-  delay(500);
+  Serial.begin(115200); //pokretanje serial monitora
+  delay(500); 
 
-  pinMode(LED_PIN, OUTPUT);
-  pinMode(BUTTON_PIN, INPUT_PULLUP);
+  pinMode(LED_PIN, OUTPUT); //led izlaz
+  pinMode(BUTTON_PIN, INPUT_PULLUP); //tipkalo ulaz
 
-  wakeCount++;
+  wakeCount++; 
   Serial.print("Probudio se: ");
   Serial.println(wakeCount);
 
   Serial.println("Cekam klik tipke...");
 
+  //sustav čeka klik
   while (digitalRead(BUTTON_PIN) == HIGH) {
   }
 
   delay(200); 
 
   Serial.println("Tipka pritisnuta → radim...");
-
+  //led blinka 10 puta
   for (int i = 0; i < 10; i++) {
     digitalWrite(LED_PIN, HIGH);
     delay(300);
